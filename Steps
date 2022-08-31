@@ -2,8 +2,10 @@ Step 1: Add the following codes to The package reference groups in the csproj fi
   <PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="6.0.0" />
   <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="6.0.0" />
   
-Step 2: Delete the following lines of codes:
-And replace it with :
+Step 2: Delete the following lines of codes in the appSettings.Json file under the "Logging" property:
+ "Microsoft": "Warning",
+ "Microsoft.Hosting.Lifetime": "Information"
+Then replace it with :
  "Microsoft.AspNetCore": "Warning"
  
  
@@ -15,4 +17,6 @@ Step 5: REBUILD the proj (Keyword REBUILD)
 
 Step 6: If there is an issue about sdk, run the following code in your dotnet command line on the main project directory (Keyword Main):
 dotnet new global.json --sdk-version 6.0.100 --force
+
+Step 7: REBUILD the proj (Keyword REBUILD)
         
